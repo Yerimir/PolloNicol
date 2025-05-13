@@ -1,0 +1,62 @@
+body {
+  background-color: #121212;
+  color: white;
+}
+
+.navbar {
+  background-color: #000;
+}
+
+.navbar-nav {
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.nav-item .nav-link {
+  white-space: nowrap;
+}
+
+.carousel-inner {
+  background-color: #121212;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0d6efd;
+}
+
+.card {
+  background-color: #1f1f1f;
+  border: none;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.carousel-item img {
+  max-height: 300px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.price-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.social-icons a i {
+  font-size: 2.8rem; 
+}

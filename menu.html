@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Información | Pollos Nycol</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { background-color: #121212; color: white; }
+  </style>
+</head>
+<body class="bg-dark text-white">
+
+<nav class="navbar navbar-expand-lg navbar-dark px-4">
+  <a class="navbar-brand fw-bold text-warning" href="index.html">POLLOS NYCOL</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav flex-wrap">
+      <li class="nav-item"><a class="nav-link" href="informacion.html">Informacion</a></li>
+      <li class="nav-item"><a class="nav-link" href="figura.html">Figura</a></li>
+      <li class="nav-item"><a class="nav-link" href="informaciones.html">Informaciones</a></li>
+      <li class="nav-item"><a class="nav-link" href="inscripciones.html">Inscripciones</a></li>
+      <li class="nav-item"><a class="nav-link" href="control_empleados.html">Control_Empleado</a></li>
+      <li class="nav-item"><a class="nav-link" href="sistema_contable.html">Sistema_Contables</a></li>
+      <li class="nav-item"><a class="nav-link" href="control_cliente.html">Control_Cliente</a></li>
+      <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+      <li class="nav-item"><a class="nav-link" href="inventario.html">Inventario</a></li>
+      <li class="nav-item"><a class="nav-link" href="entrevista.html">Entrevista</a></li>
+      <li class="nav-item"><a class="nav-link" href="modelo_relacional.html">Modelo_Relacional</a></li>
+      <li class="nav-item"><a class="nav-link" href="contenido_general.html">Contenido_General</a></li>
+    </ul>
+    <div class="d-flex align-items-center ms-3 social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100072304426007" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/" class="text-white"><i class="bi bi-instagram"></i></a>
+    </div>
+  </div>
+</nav>
+
+<section class="container my-5">
+  <h2 class="text-center mb-4">MENU</h2>
+
+  <div class="d-flex justify-content-center mb-4">
+    <button class="btn btn-danger mx-2" onclick="mostrarProductos('hamburguesas', true)">Hamburger</button>
+    <button class="btn btn-dark mx-2" onclick="mostrarProductos('Pollo', true)">Pollo</button>
+    <button class="btn btn-dark mx-2" onclick="mostrarProductos('desayunos', true)">Desayunos</button>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-4 g-4" id="contenedorProductos"></div>
+
+  <div class="text-center my-4">
+    <button class="btn btn-outline-light" id="cargarMas">Cargar Más</button>
+  </div>
+
+  <div class="text-center">
+    <img src="images/info.png" alt="Platillo destacado" class="img-fluid rounded shadow-lg" style="max-height: 400px;">
+  </div>
+</section>
+
+<script>
+  const productos = {
+    hamburguesas: [
+      { titulo: "Hamburguesa Clásica", descripcion: "Jugosa carne a la parrilla con queso cheddar.", precio: "$23.00", imagen: "images/food1.png" },
+      { titulo: "Hamburguesa de Pollo", descripcion: "Opción ligera con pechuga de pollo crujiente.", precio: "$15.00", imagen: "images/food2.png" },
+      { titulo: "Hamburguesa Vegana", descripcion: "JLa hamburguesa vegana se prepara con una mezcla de garbanzos, remolacha y avena, lo que le da una textura firme y un sabor delicioso.", precio: "$23.00", imagen: "images/imag1.png" },
+      { titulo: "Hamburguesa de Pollo", descripcion: "Opción ligera con pechuga de pollo crujiente.", precio: "$15.00", imagen: "images/food4.png" },
+      { titulo: "Hamburguesa BBQ", descripcion: "Con salsa BBQ dulce y ahumada.", precio: "$25.00", imagen: "images/food3.png" }
+    ],
+    Pollo: [
+      { titulo: "Pollo y Papas", descripcion: "Delicioso taco con carne al pastor y piña.", precio: "$12.00", imagen: "images/ima.png" },
+      { titulo: "Pollo Entero", descripcion: "Taco con carne de res y cebolla asada.", precio: "$14.00", imagen: "images/ima2.png" },
+      { titulo: "Alitas", descripcion: "Delicioso taco con carne al pastor y piña.", precio: "$12.00", imagen: "images/ima3.png" },
+      { titulo: "Pollo Palomitas", descripcion: "Taco con carne de res y cebolla asada.", precio: "$14.00", imagen: "images/ima4.png" },
+      { titulo: "Patas de Pollo", descripcion: "Pollo marinado con especias mexicanas.", precio: "$13.00", imagen: "images/ima.png" }
+    ],
+    desayunos: [
+      { titulo: "Huevos y Cafe", descripcion: "Desayuno tradicional con pan y café.", precio: "$18.00", imagen: "images/des1.png" },
+      { titulo: "Vegano", descripcion: "Totopos con salsa verde, crema y queso.", precio: "$16.00", imagen: "images/des.png" },
+      { titulo: "Sallchi Papa", descripcion: "Totopos con salsa verde, crema y queso.", precio: "$16.00", imagen: "images/papas.png" },
+      { titulo: "Pizza", descripcion: "Omelette esponjoso relleno de queso.", precio: "$15.00", imagen: "images/food9.png" }
+    ]
+  };
+
+  const contenedor = document.getElementById("contenedorProductos");
+  const btnCargar = document.getElementById("cargarMas");
+
+  let productosMostrados = 0;
+  let productosPorPagina = 2;
+  let categoriaActual = "hamburguesas";
+
+  function mostrarProductos(categoria, reset = false) {
+    if (reset || categoria !== categoriaActual) {
+      contenedor.innerHTML = "";
+      productosMostrados = 0;
+      categoriaActual = categoria;
+    }
+
+    const lista = productos[categoria];
+    const total = lista.length;
+    const limite = Math.min(productosMostrados + productosPorPagina, total);
+
+    for (let i = productosMostrados; i < limite; i++) {
+      const producto = lista[i];
+      const col = document.createElement("div");
+      col.className = "col";
+      col.innerHTML = `
+        <div class="card bg-dark text-white h-100">
+          <img src="${producto.imagen}" class="card-img-top" alt="${producto.titulo}">
+          <div class="card-body">
+            <h5 class="card-title">${producto.titulo}</h5>
+            <p class="card-text">${producto.descripcion}</p>
+          </div>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <span>${producto.precio}</span>
+          </div>
+        </div>`;
+      contenedor.appendChild(col);
+    }
+
+    productosMostrados = limite;
+    btnCargar.style.display = productosMostrados >= total ? 'none' : 'inline-block';
+  }
+
+  btnCargar.addEventListener('click', () => {
+    mostrarProductos(categoriaActual);
+  });
+
+  window.onload = () => mostrarProductos("hamburguesas", true);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
