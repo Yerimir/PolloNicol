@@ -47,8 +47,8 @@
 
   <div class="d-flex justify-content-center mb-4">
     <button class="btn btn-danger mx-2" onclick="mostrarProductos('hamburguesas', true)">Hamburger</button>
-    <button class="btn btn-dark mx-2" onclick="mostrarProductos('Pollo', true)">Pollo</button>
-    <button class="btn btn-dark mx-2" onclick="mostrarProductos('desayunos', true)">Desayunos</button>
+    <button class="btn btn-secondary mx-2" onclick="mostrarProductos('Pollo', true)">Pollo</button>
+    <button class="btn btn-success mx-2" onclick="mostrarProductos('desayunos', true)">Desayunos</button>
   </div>
 
   <div class="row row-cols-1 row-cols-md-4 g-4" id="contenedorProductos"></div>
@@ -65,24 +65,25 @@
 <script>
   const productos = {
     hamburguesas: [
-      { titulo: "Hamburguesa Clásica", descripcion: "Jugosa carne a la parrilla con queso cheddar.", precio: "$23.00", imagen: "images/food1.png" },
-      { titulo: "Hamburguesa de Pollo", descripcion: "Opción ligera con pechuga de pollo crujiente.", precio: "$15.00", imagen: "images/food2.png" },
-      { titulo: "Hamburguesa Vegana", descripcion: "JLa hamburguesa vegana se prepara con una mezcla de garbanzos, remolacha y avena, lo que le da una textura firme y un sabor delicioso.", precio: "$23.00", imagen: "images/imag1.png" },
-      { titulo: "Hamburguesa de Pollo", descripcion: "Opción ligera con pechuga de pollo crujiente.", precio: "$15.00", imagen: "images/food4.png" },
-      { titulo: "Hamburguesa BBQ", descripcion: "Con salsa BBQ dulce y ahumada.", precio: "$25.00", imagen: "images/food3.png" }
+      { titulo: "Hamburguesa Clásica", descripcion: "Jugosa carne a la parrilla con queso cheddar.", precio: "Bs 15.00", imagen: "images/food1.png" },
+      { titulo: "Hamburguesa de Pollo", descripcion: "Opción ligera con pechuga de pollo crujiente.", precio: "Bs 8.00", imagen: "images/food2.png" },
+      { titulo: "Hamburguesa Vegana", descripcion: "JLa hamburguesa vegana se prepara con una mezcla de garbanzos, remolacha y avena, lo que le da una textura firme y un sabor delicioso.", precio: "Bs 15.00", imagen: "images/imag1.png" },
+      { titulo: "Hamburguesa de Pollo", descripcion: "Opción ligera con pechuga de pollo crujiente.", precio: "Bs 23.00", imagen: "images/food10.png" },
+      { titulo: "Hamburguesa BBQ", descripcion: "Con salsa BBQ dulce y ahumada.", precio: "Bs 30.00", imagen: "images/food3.png" }
     ],
     Pollo: [
-      { titulo: "Pollo y Papas", descripcion: "Delicioso taco con carne al pastor y piña.", precio: "$12.00", imagen: "images/ima.png" },
-      { titulo: "Pollo Entero", descripcion: "Taco con carne de res y cebolla asada.", precio: "$14.00", imagen: "images/ima2.png" },
-      { titulo: "Alitas", descripcion: "Delicioso taco con carne al pastor y piña.", precio: "$12.00", imagen: "images/ima3.png" },
-      { titulo: "Pollo Palomitas", descripcion: "Taco con carne de res y cebolla asada.", precio: "$14.00", imagen: "images/ima4.png" },
-      { titulo: "Patas de Pollo", descripcion: "Pollo marinado con especias mexicanas.", precio: "$13.00", imagen: "images/ima.png" }
+      { titulo: "Pollo Broaster", descripcion: "El pollo ,papas y arroz incluidos.", precio: "Bs 21.00", imagen: "images/pollobro.png" },
+      { titulo: "Pollo y Papas", descripcion: "Delicioso taco con carne al pastor y piña.", precio: "Bs 15.00", imagen: "images/ima.png" },
+      { titulo: "Pollo Spiedo", descripcion: "Taco con carne de res y cebolla asada.", precio: "Bs 21.00", imagen: "images/ima2.png" },
+      { titulo: "Alitas", descripcion: "Delicioso taco con carne al pastor y piña.", precio: "Bs 10.00", imagen: "images/ima3.png" },
+      { titulo: "Pollo Palomitas", descripcion: "Taco con carne de res y cebolla asada.", precio: "Bs 10.00", imagen: "images/ima4.png" },
+      { titulo: "Patas de Pollo", descripcion: "Pollo marinado con especias mexicanas.", precio: "Bs 13.00", imagen: "images/ima.png" }
     ],
     desayunos: [
-      { titulo: "Huevos y Cafe", descripcion: "Desayuno tradicional con pan y café.", precio: "$18.00", imagen: "images/des1.png" },
-      { titulo: "Vegano", descripcion: "Totopos con salsa verde, crema y queso.", precio: "$16.00", imagen: "images/des.png" },
-      { titulo: "Sallchi Papa", descripcion: "Totopos con salsa verde, crema y queso.", precio: "$16.00", imagen: "images/papas.png" },
-      { titulo: "Pizza", descripcion: "Omelette esponjoso relleno de queso.", precio: "$15.00", imagen: "images/food9.png" }
+      { titulo: "Huevos y Cafe", descripcion: "Desayuno tradicional con pan y café.", precio: "Bs  8.00", imagen: "images/des1.png" },
+      { titulo: "Vegano", descripcion: "Totopos con salsa verde, crema y queso.", precio: "Bs  10.00", imagen: "images/des.png" },
+      { titulo: "Sallchi Papa", descripcion: "Totopos con salsa verde, crema y queso.", precio: "Bs 12.00", imagen: "images/salchi2.png" },
+      { titulo: "Pizza", descripcion: "Omelette esponjoso relleno de queso.", precio: "Bs 15.00", imagen: "images/food9.png" }
     ]
   };
 
